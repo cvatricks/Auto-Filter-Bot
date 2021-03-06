@@ -12,7 +12,7 @@ from script import script
 async def start(client, message):
     try:
         await message.reply_text(
-             text="Hi {}, How are you?“.format(message.from_user.mention),
+             text="Hi {}, How are you?".format(message.from_user.mention),
              disable_web_page_preview=True,
              reply_to_message_id=message.message_id
         )
