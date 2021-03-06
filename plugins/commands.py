@@ -12,7 +12,7 @@ from script import script
 async def start(client, message):
     try:
         await message.reply_text(
-             text="Hi, How are you?“.format(message.from_user.mention),
+             text="Hi {}, How are you?“.format(message.from_user.mention),
              disable_web_page_preview=True,
              reply_to_message_id=message.message_id
         )
@@ -23,20 +23,8 @@ async def start(client, message):
 async def help(client, message):
     try:
         await message.reply_text(
-            text=script.HELP_MSG,
+            text="Hey, what kind of help you want?",
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("BACK", callback_data="start_data"),
-                        InlineKeyboardButton("ABOUT", callback_data="about_data"),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            "⭕️ SUPPORT ⭕️", url="https://t.me/TroJanzSupport")
-                    ]
-                ]
-            ),
             reply_to_message_id=message.message_id
         )
     except:
@@ -46,20 +34,8 @@ async def help(client, message):
 async def about(client, message):
     try:
         await message.reply_text(
-            text=script.ABOUT_MSG,
+            text="I'm Shruti hassan, <a href="http://superbotzproxy.herokuapp.com/proxy/https://en.m.wikipedia.org/wiki/Shruti_Haasan">here</a> is my bio.",
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("BACK", callback_data="help_data"),
-                        InlineKeyboardButton("START", callback_data="start_data"),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            "SOURCE CODE", url="https://github.com/TroJanzHEX/Auto-Filter-Bot")
-                    ]
-                ]
-            ),
             reply_to_message_id=message.message_id
         )
     except:
