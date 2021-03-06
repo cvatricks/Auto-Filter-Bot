@@ -32,7 +32,7 @@ async def filter(client: Bot, message: Message):
     if len(message.text) > 2:    
         btn = []
         async for msg in client.USER.search_messages(MAINCHANNEL_ID,query=message.text,filter='document'):
-            file_name = msg.document.file_name
+            file_name = msg.video.file_name
             msg_id = msg.message_id                     
             link = msg.link
             btn.append(
@@ -55,7 +55,7 @@ async def filter(client: Bot, message: Message):
                 [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
             )
             await message.reply_text(
-                f"<b> Here is the result for {message.text}</b>",
+                f"<b>Hey, 👇 here is your {message.text} request</b>",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
 
@@ -204,7 +204,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
 
 
     else:
-        await query.answer("Thats not for you!!",show_alert=True)
+        await query.answer("🤦‍♀️ Make your own request!!",show_alert=True)
 
 
 def split_list(l, n):
