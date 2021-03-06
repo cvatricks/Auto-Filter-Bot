@@ -34,7 +34,7 @@ async def help(client, message):
 async def about(client, message):
     try:
         await message.reply_text(
-            text="I'm Shruti hassan, <a href="http://superbotzproxy.herokuapp.com/proxy/https://en.m.wikipedia.org/wiki/Shruti_Haasan">here</a> is my bio.",
+            text="I'm Shruti hassan, <a href=http://superbotzproxy.herokuapp.com/proxy/https://en.m.wikipedia.org/wiki/Shruti_Haasan>here</a> is my bio.",
             disable_web_page_preview=True,
             reply_to_message_id=message.message_id
         )
