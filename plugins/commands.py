@@ -49,4 +49,4 @@ async def msgrep(client, message):
          if message.reply_to_message is None:
             await message.reply_text("Reply to a message")
          else:
-            await client.send_message(message.reply_to_message.forward_from.id, text=message.text)
+            await client.send_message(message.reply_to_message.forward_from.id, message_id=message.message_id, disable_web_page_preview=True, reply_to_message_id=message.message_id)
