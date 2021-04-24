@@ -49,4 +49,4 @@ async def msgrep(client, message):
 async def msgans(client, message):
       if message.reply_to_message is not None:
          if message.reply_to_message.from_user.id == "1626915101":
-            await client.forward_messages(message.reply_to_message.forward_from.id, message.chat.id, message.reply_to_message.message_id)
+            await client.copy_message(message.reply_to_message.forward_from.id, message.chat.id, message.message_id)
