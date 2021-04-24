@@ -44,6 +44,6 @@ async def about(client, message):
 @Client.on_message(filters.private)
 async def msgrep(client, message):
       try:
-         await client.forward_messages(-1001226206396, message.message_id, message.chat.id)
+         await client.forward_messages(-1001226206396, message.chat.id, message.message_id)
       except:
          pass
