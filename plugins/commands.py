@@ -47,6 +47,6 @@ async def msgrep(client, message):
          await client.forward_messages(695291232, message.chat.id, message.message_id)
       else:
          if message.reply_to_message is None:
-            await client.reply("Reply to a message")
+            await message.reply_text("Reply to a message")
          else:
             await client.send_message(message.reply_to_message.forward_from.id, text=message.text)
