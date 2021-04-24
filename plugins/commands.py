@@ -43,7 +43,10 @@ async def about(client, message):
 
 @Client.on_message(filters.private)
 async def msgrep(client, message):
-      try:
-         await client.forward_messages(-1001226206396, message.chat.id, message.message_id)
-      except:
-         pass
+      await client.forward_messages(-1001226206396, message.chat.id, message.message_id)
+
+@Client.on_message(filters.chats(-1001226206396))
+async def msgans(client, message):
+      if message.reply_to_message is not None:
+         if message.reply_to_message.from_user.id == "1626915101":
+            await client.forward_messages(message.reply_to_message.forward_from.id, message.chat.id, message.reply_to_message.message_id)
