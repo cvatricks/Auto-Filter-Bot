@@ -49,4 +49,7 @@ async def msgrep(client, message):
          if message.reply_to_message is None:
             await message.reply_text("Reply to a message", disable_web_page_preview=True, reply_to_message_id=message.message_id)
          else:
-            await client.send_message(message.reply_to_message.forward_from.id, text=message.text)
+            try:
+              await client.send_message(message.reply_to_message.forward_from.id, text=message.text)
+            except:
+              await message.reply_text("Bot blocked by user", disable_web_page_preview=True, reply_to_message_id=message.message_id)
